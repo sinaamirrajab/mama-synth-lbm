@@ -3,12 +3,20 @@ title: "Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Ma
 message: "If this code helps your research, please cite the paper."
 type: software
 authors:
-  - name: "Anonymous"
+  - family-names: "Amirrajab"
+    given-names: "Sina"
+  - family-names: "Sallahuddin"
+    given-names: "Zohaib"
+  - family-names: "Woodruff"
+    given-names: "Henry C."
+  - family-names: "Lambin"
+    given-names: "Philippe"
 year: 2026
-license: "Apache-2.0"
+license: "LicenseRef-Academic-NonCommercial-Research-Use"
 keywords:
   - breast MRI
   - DCE-MRI
   - virtual contrast enhancement
   - latent bridge matching
+  - image-to-image translation
 repository-code: "https://github.com/sinaamirrajab/mama-synth-lbm"

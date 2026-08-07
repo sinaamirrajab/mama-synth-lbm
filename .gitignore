@@ -14,6 +14,10 @@ wandb/
 
 resources/*
 !resources/README.md
+!resources/MICCAI_2026___MAMA_SYNTH.pdf
+!resources/method.png
+!resources/qualitative_representative_n4_tumor_zoom.pdf
+!resources/qualitative_representative_n4_tumor_zoom.png
 *.tar
 *.tar.gz
 *.pt

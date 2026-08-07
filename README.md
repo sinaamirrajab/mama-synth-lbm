@@ -1,19 +1,40 @@
-# MAMA-SYNTH LBM
+# MAMA-SYNTH LBM 🧬✨
 
-Minimal code for **Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching**.
+**Latent Bridge Matching for pre- to post-contrast breast DCE-MRI synthesis.**
 
-This repository trains a latent bridge model that starts from a pre-contrast breast MRI latent and iteratively refines it toward a synthetic peak-enhanced post-contrast latent. The release is intentionally small: code lives here; trained weights and Docker images are downloaded separately.
+This repository contains the minimal training and inference code for the MICCAI 2026 paper **Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching** by Sina Amirrajab, Zohaib Sallahuddin, Henry C. Woodruff, and Philippe Lambin.
 
-![Qualitative MAMA-SYNTH LBM results](assets/paper_qualitative.png)
+LBM starts from the observed pre-contrast MRI latent instead of random noise, then progressively transports it toward a peak-enhanced post-contrast latent. The goal is practical virtual contrast enhancement: preserve patient anatomy, model localized enhancement, and keep the release small enough to actually clone.
 
-## What Is Included
+📄 **Paper:** [MICCAI_2026___MAMA_SYNTH.pdf](resources/MICCAI_2026___MAMA_SYNTH.pdf)
+
+## Method 🧠
+
+![Latent Bridge Matching method overview](resources/method.png)
+
+The model encodes the pre-contrast source image `x0` and peak-enhanced target image `x1` with a Stable Diffusion VAE. During training, it samples noisy bridge states between the paired source and target latents, then trains a latent UNet to predict the remaining correction toward the target latent. At inference time, only the pre-contrast image is available; the source latent is refined over a decreasing bridge-time schedule and decoded back to image space.
+
+## Qualitative Results 🔍
+
+![Qualitative MAMA-SYNTH LBM results](resources/qualitative_representative_n4_tumor_zoom.png)
+
+The paper evaluates LBM on 91 DUKE validation cases from the MAMA-SYNTH setting. Tumor-mask conditioning improves the source-only LBM across the reported validation metrics, and using predicted masks gives a reviewer-facing comparison for a more realistic inference setup.
+
+| Model | MSE ↓ | LPIPS ↓ | Tumor SSIM ↑ | FRD ↓ |
+|---|---:|---:|---:|---:|
+| LBM, source only | 1.023 ± 1.169 | 0.119 ± 0.035 | 0.355 ± 0.232 | 7.523 |
+| LBM, source + tumor mask | 0.940 ± 1.085 | 0.114 ± 0.034 | 0.429 ± 0.185 | 4.716 |
+| LBM, source + predicted mask | 0.985 ± 1.128 | 0.115 ± 0.034 | 0.356 ± 0.229 | 5.107 |
+| LDM, source + tumor mask | 1.122 ± 1.248 | 0.136 ± 0.037 | 0.322 ± 0.174 | 4.786 |
+
+## What Is Included 📦
 
 - Minimal latent-manifest training code for the LBM paper model.
 - A submission-style inference runtime for single-slice `.mha`, `.nii`, or `.nii.gz` inputs.
 - Docker scaffolding for offline inference once model resources are downloaded.
-- A paper figure and citation metadata.
+- Paper PDF, method figure, qualitative visualization, and citation metadata.
 
-Large assets are not committed. Fill these placeholders after upload:
+Large model assets are not committed. Fill these placeholders after upload:
 
 ```text
 MODEL_DOWNLOAD_URL=MODEL_DOWNLOAD_URL
@@ -21,7 +42,7 @@ DOCKER_IMAGE=DOCKER_IMAGE
 DOCKER_TARBALL_URL=DOCKER_TARBALL_URL
 ```
 
-## Installation
+## Installation ⚙️
 
 Use Python 3.10 or newer. Install PyTorch for your CUDA version first, then:
 
@@ -30,7 +51,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## Train From A Latent Manifest
+## Train From A Latent Manifest 🚀
 
 Training expects a `latent_manifest.csv` whose rows point to `.pt` latent payloads with at least:
 
@@ -67,7 +88,7 @@ runs/lbm_source_seg/
     training_state.json
 ```
 
-## Inference With Released Weights
+## Inference With Released Weights 🧪
 
 Download and unpack the model bundle into `resources/` so it matches `resources/README.md`. Then copy or edit the config:
 
@@ -104,7 +125,7 @@ Predictions are written to:
 output/images/synthetic-contrast-dce-mri-slice-breast/output.mha
 ```
 
-## Docker
+## Docker 🐳
 
 Use a published image:
 
@@ -129,17 +150,17 @@ To build locally after downloading `resources/`:
 docker build -t mama-synth-lbm .
 ```
 
-## Citation
+## Citation 📚
 
 ```bibtex
-@inproceedings{mamasynth_lbm_2026,
+@inproceedings{amirrajab2026mamasynthlbm,
   title = {Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching},
-  author = {Anonymous},
-  booktitle = {MICCAI},
+  author = {Amirrajab, Sina and Sallahuddin, Zohaib and Woodruff, Henry C. and Lambin, Philippe},
+  booktitle = {MICCAI 2026},
   year = {2026}
 }
 ```
 
-## License
+## License 🎓
 
-See `LICENSE`.
+This code and accompanying paper assets are released for **academic and non-commercial research use only**. They are not licensed for clinical use, commercial use, redistribution as a commercial product, or medical decision-making. See [LICENSE](LICENSE).

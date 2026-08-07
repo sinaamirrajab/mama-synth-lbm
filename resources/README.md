@@ -1,12 +1,21 @@
-# Model Resources
+# Resources
 
-This folder is intentionally empty in GitHub. Download the released model bundle from:
+This directory contains the small paper assets committed with the repository:
+
+```text
+MICCAI_2026___MAMA_SYNTH.pdf
+method.png
+qualitative_representative_n4_tumor_zoom.pdf
+qualitative_representative_n4_tumor_zoom.png
+```
+
+Large model resources are intentionally not committed. Download the released model bundle from:
 
 ```text
 MODEL_DOWNLOAD_URL
 ```
 
-After unpacking, the layout should be:
+After unpacking, the inference resource layout should also include:
 
 ```text
 resources/

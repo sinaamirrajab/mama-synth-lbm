@@ -9,10 +9,17 @@ qualitative_representative_n4_tumor_zoom.pdf
 qualitative_representative_n4_tumor_zoom.png
 ```
 
-Large model resources are intentionally not committed. Download the released model bundle from:
+Download the trained runtime bundle:
 
 ```text
+mama-synth-lbm-model-resources-v0.1.0.tar
 MODEL_DOWNLOAD_URL
+```
+
+Unpack it from the repository root:
+
+```bash
+tar -xf mama-synth-lbm-model-resources-v0.1.0.tar -C .
 ```
 
 After unpacking, the inference resource layout should also include:

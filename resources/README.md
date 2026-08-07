@@ -13,7 +13,8 @@ Download the trained runtime bundle:
 
 ```text
 mama-synth-lbm-model-resources-v0.1.0.tar
-MODEL_DOWNLOAD_URL
+https://drive.google.com/file/d/1wc4D6ZxSRThMtbIW5ASTziWf38pa2jSE/view?usp=sharing
+SHA256: eac4037d24e16a2675f89f7c445cd0292296891aa43fa63d456dfbf89adad982
 ```
 
 Unpack it from the repository root:

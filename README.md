@@ -31,24 +31,20 @@ The paper evaluates LBM on 91 DUKE validation cases from the MAMA-SYNTH setting.
 
 - Minimal latent-manifest training code for the LBM paper model.
 - A submission-style inference runtime for single-slice `.mha`, `.nii`, or `.nii.gz` inputs.
-- Docker scaffolding for offline inference once model resources are downloaded.
 - Paper PDF, method figure, qualitative visualization, and citation metadata.
 
-## Download Weights and Container 🔗
+## Download Model Weights 🔗
 
-The code repository stays lightweight, while the trained resources are distributed as release assets:
+The code repository stays lightweight, while the trained resources are distributed separately:
 
 | Asset | Filename | Link |
 |---|---|---|
-| Trained model resources | `mama-synth-lbm-model-resources-v0.1.0.tar` | `MODEL_DOWNLOAD_URL` |
-| Docker image tarball | `mama-synth-lbm-docker-v0.1.0.tar.gz` | `DOCKER_TARBALL_URL` |
-| Pullable Docker image | `DOCKER_IMAGE` | `DOCKER_IMAGE` |
+| Trained model resources | `mama-synth-lbm-model-resources-v0.1.0.tar` | [Google Drive](https://drive.google.com/file/d/1wc4D6ZxSRThMtbIW5ASTziWf38pa2jSE/view?usp=sharing) |
 
-Expected SHA256 checksums:
+Expected SHA256 checksum:
 
 ```text
 eac4037d24e16a2675f89f7c445cd0292296891aa43fa63d456dfbf89adad982  mama-synth-lbm-model-resources-v0.1.0.tar
-e53db8bd819477af68d9069ff1f3b2eed087f6fb7f349db3d4505713c2f31900  mama-synth-lbm-docker-v0.1.0.tar.gz
 ```
 
 After downloading the model archive into a clone of this repository:
@@ -134,31 +130,6 @@ Predictions are written to:
 
 ```text
 output/images/synthetic-contrast-dce-mri-slice-breast/output.mha
-```
-
-## Docker 🐳
-
-Use a published image:
-
-```bash
-docker pull DOCKER_IMAGE
-docker run --gpus all \
-  -v /path/to/input:/input \
-  -v /path/to/output:/output \
-  DOCKER_IMAGE
-```
-
-Or load the released Docker tarball:
-
-```bash
-wget DOCKER_TARBALL_URL -O mama-synth-lbm-docker-v0.1.0.tar.gz
-docker load < mama-synth-lbm-docker-v0.1.0.tar.gz
-```
-
-To build locally after downloading `resources/`:
-
-```bash
-docker build -t mama-synth-lbm .
 ```
 
 ## Citation 📚

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mama-synth-lbm"
+version = "0.1.0"
+description = "Minimal Latent Bridge Matching code for MAMA-SYNTH breast DCE-MRI synthesis."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Anonymous"}]
+
+[tool.setuptools.packages.find]
+where = ["src"]

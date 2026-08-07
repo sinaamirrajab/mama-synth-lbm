@@ -1,0 +1,13 @@
+# Install torch separately for your CUDA version:
+#   https://pytorch.org/get-started/locally/
+accelerate>=0.30.0
+diffusers==0.32.2
+huggingface_hub>=0.24.0
+nnunetv2==2.6.2
+numpy>=1.24.0
+pandas>=2.0.0
+Pillow>=9.0.0
+safetensors>=0.4.3
+SimpleITK>=2.3.0
+tqdm>=4.66.0
+transformers==4.41.2

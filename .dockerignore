@@ -1,0 +1,9 @@
+.git
+.venv
+venv
+runs
+outputs
+logs
+__pycache__
+.pytest_cache
+resources/README.md

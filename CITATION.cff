@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: "Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching"
+message: "If this code helps your research, please cite the paper."
+type: software
+authors:
+  - name: "Anonymous"
+year: 2026
+license: "Apache-2.0"
+keywords:
+  - breast MRI
+  - DCE-MRI
+  - virtual contrast enhancement
+  - latent bridge matching
+repository-code: "https://github.com/sinaamirrajab/mama-synth-lbm"

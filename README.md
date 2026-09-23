@@ -2,11 +2,20 @@
 
 **Latent Bridge Matching for pre- to post-contrast breast DCE-MRI synthesis.**
 
-This repository contains the minimal training and inference code for the MICCAI 2026 paper **Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching** by Sina Amirrajab, Zohaib Sallahuddin, Henry C. Woodruff, and Philippe Lambin.
+**Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching**
+
+Sina Amirrajab<sup>1</sup>, Zohaib Salahuddin<sup>1</sup>, Henry C. Woodruff<sup>1,2</sup>, Philippe Lambin<sup>1,2</sup>
+
+<sup>1</sup> The D-Lab, Department of Precision Medicine, GROW – Research Institute for Oncology and Reproduction, Maastricht University, Maastricht, the Netherlands<br>
+<sup>2</sup> Department of Radiology and Nuclear Medicine, GROW – Research Institute for Oncology and Reproduction, Maastricht University Medical Center+, Maastricht, the Netherlands
+
+[![arXiv](https://img.shields.io/badge/arXiv-2608.10000-b31b1b.svg)](https://arxiv.org/abs/2608.10000)
+
+This repository contains the minimal training and inference code for the MICCAI 2026 paper [Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching](https://arxiv.org/abs/2608.10000).
 
 LBM starts from the observed pre-contrast MRI latent instead of random noise, then progressively transports it toward a peak-enhanced post-contrast latent. The goal is practical virtual contrast enhancement: preserve patient anatomy, model localized enhancement, and keep the release small enough to actually clone.
 
-📄 **Paper:** [MICCAI_2026___MAMA_SYNTH.pdf](resources/MICCAI_2026___MAMA_SYNTH.pdf)
+📄 **Paper:** [arXiv:2608.10000](https://arxiv.org/abs/2608.10000) · [PDF](resources/MICCAI_2026___MAMA_SYNTH.pdf)
 
 ## Method 🧠
 
@@ -135,11 +144,15 @@ output/images/synthetic-contrast-dce-mri-slice-breast/output.mha
 ## Citation 📚
 
 ```bibtex
-@inproceedings{amirrajab2026mamasynthlbm,
-  title = {Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching},
-  author = {Amirrajab, Sina and Sallahuddin, Zohaib and Woodruff, Henry C. and Lambin, Philippe},
-  booktitle = {MICCAI 2026},
-  year = {2026}
+@article{amirrajab2026mamasynthlbm,
+  title   = {Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching},
+  author  = {Amirrajab, Sina and Salahuddin, Zohaib and Woodruff, Henry C. and Lambin, Philippe},
+  journal = {arXiv preprint arXiv:2608.10000},
+  year    = {2026},
+  eprint  = {2608.10000},
+  archivePrefix = {arXiv},
+  primaryClass  = {eess.IV},
+  url     = {https://arxiv.org/abs/2608.10000}
 }
 ```
 

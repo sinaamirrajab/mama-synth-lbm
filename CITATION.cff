@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: "Amirrajab"
     given-names: "Sina"
-  - family-names: "Sallahuddin"
+  - family-names: "Salahuddin"
     given-names: "Zohaib"
   - family-names: "Woodruff"
     given-names: "Henry C."
@@ -19,4 +19,24 @@ keywords:
   - virtual contrast enhancement
   - latent bridge matching
   - image-to-image translation
+identifiers:
+  - type: other
+    value: "arXiv:2608.10000"
+    description: "arXiv preprint"
+url: "https://arxiv.org/abs/2608.10000"
+preferred-citation:
+  type: article
+  title: "Pre- to Post-Contrast Synthesis of Breast DCE-MRI using Latent Bridge Matching"
+  authors:
+    - family-names: "Amirrajab"
+      given-names: "Sina"
+    - family-names: "Salahuddin"
+      given-names: "Zohaib"
+    - family-names: "Woodruff"
+      given-names: "Henry C."
+    - family-names: "Lambin"
+      given-names: "Philippe"
+  journal: "arXiv preprint arXiv:2608.10000"
+  year: 2026
+  url: "https://arxiv.org/abs/2608.10000"
 repository-code: "https://github.com/sinaamirrajab/mama-synth-lbm"
